@@ -20,9 +20,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Test credential
-          command: echo ${AWS_ACCESS_KEY_ID}
-      - run:
           name: Create Cloudformation Stack
           command: |
             aws cloudformation deploy \
