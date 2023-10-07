@@ -7,13 +7,6 @@ version: 2.1
 orbs:
   aws-cli: circleci/aws-cli@2.0.3
 jobs:
-  set_up_aws:
-    executor: aws-cli/default
-    steps:
-      - aws-cli/setup:
-          aws-access-key-id: AWS_ACCESS_KEY
-          aws-secret-access-key: AWS_ACCESS_SECRET
-          aws-region: AWS_REGION_NAME
   create_infrastructure: 
     docker:
       - image: amazon/aws-cli
@@ -32,5 +25,4 @@ jobs:
 workflows:
   crete_infraastructure_workflow:
     jobs:
-      - set_up_aws
       - create_infrastructure
